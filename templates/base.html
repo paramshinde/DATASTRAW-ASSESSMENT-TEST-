@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page_title }} | DataStraw CRM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+              body: ['"Inter"', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              ink: {
+                950: '#09111f',
+                900: '#101a2b',
+                800: '#182338',
+              },
+              ember: {
+                500: '#f97316',
+                600: '#ea580c',
+              },
+              aqua: {
+                400: '#38bdf8',
+                500: '#0ea5e9',
+              },
+            },
+            boxShadow: {
+              glow: '0 20px 60px rgba(14, 165, 233, 0.14)',
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}" />
+  </head>
+  <body class="min-h-screen bg-ink-950 text-slate-100 font-body">
+    <div class="page-shell">
+      <header class="border-b border-white/10 bg-white/5 backdrop-blur">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+          <a href="/" class="group flex items-center gap-3">
+            <div class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-aqua-400 to-ember-500 text-base font-bold text-ink-950 shadow-glow">D</div>
+            <div>
+              <p class="font-sans text-lg font-bold tracking-tight">DataStraw CRM</p>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Support ticket operations</p>
+            </div>
+          </a>
+          <a href="/" class="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-aqua-400/60 hover:bg-aqua-400/10">Home</a>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+  </body>
+</html>
+
